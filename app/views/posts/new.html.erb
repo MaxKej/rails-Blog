@@ -1,0 +1,57 @@
+<head>
+  <title>Dodaj Post</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to "Strona Główna", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Dodaj nowy post", 'new', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Znajdź Post", '/find', class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Polityka Prywatności", '/privacy', class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+      <h1>Dodaj Post</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <%= form_with(model: @post, url: posts_path, method: :post, class: "my-form") do |form| %>
+        <div class="form-group">
+          <%= form.label 'Tytuł' %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label 'Treść' %>
+          <%= form.text_area :content, class: "form-control" %>
+        </div>
+
+        <%= form.hidden_field :author, value: current_user.email %>
+
+        <%= form.submit "Utwórz post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<head>
+  <title>Prywatność</title>
+</head>
+
+<%#= link_to "Strona Główna", root_path %>
+<%#= link_to "Dodaj nowy post", 'posts/new' %>
+<%#= link_to "Znajdź Post", 'find' %>
+<%#= link_to "Polityka Prywatności", 'privacy' %>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to "Strona Główna", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Dodaj nowy post", 'posts/new', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Znajdź Post", 'find', class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+      <h1>Polityka Prywatności</h1>
+    </div>
+  </div>
+</div>
+
+
+

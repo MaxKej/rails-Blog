@@ -1,0 +1,64 @@
+<head>
+  <title>Znajdź Post</title>
+
+  <%#= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <%= link_to "Strona Główna", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to "Dodaj nowy post", 'posts/new', class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Znajdź Post", 'find', class: "nav-link" %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="rounded border p-4 bg-light mb-4">
+        <h1>Znajdź Post</h1>
+        <%= form_with(url: find_page_path, method: :get, local: true, class: "my-form") do |form| %>
+          <div class="input-group mb-3">
+            <%= form.text_field :title, class: "form-control", placeholder: "Podaj tytuł postu" %>
+            <div class="input-group-append">
+              <%= form.submit "Wyszukaj", class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <% if @posts.any? %>
+        <% @posts.each do |post| %>
+          <div class="rounded border p-4 bg-light mb-4">
+            <%= link_to post.title, post_path(post), class: "post-link" %>
+            <p><%= post.author %></p>
+            <p><%= post.content %></p>
+            <p><%= post.timestamp&.strftime("%d %b %Y %H:%M:%S") %></p>
+            <!-- Add any other post details you want to display -->
+          </div>
+        <% end %>
+      <% else %>
+        <p class="rounded border p-4 bg-light">Nie znaleziono żadnego postu.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

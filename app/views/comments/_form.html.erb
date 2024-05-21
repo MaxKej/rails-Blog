@@ -1,0 +1,28 @@
+<% @comment ||= @post.comments.build %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <%= form_with(model: [@post, @comment], url: post_comments_path(@post), method: :post, class: "my-form") do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+
+<!--        <div class="form-group">-->
+          <%#= form.label 'Autor' %>
+          <%#= form.text_field :comment_author, class: "form-control" %>
+<!--        </div>-->
+
+
+        <%= form.hidden_field :comment_author, value: user_signed_in? ? current_user.email : "Gość" %>
+
+        <div class="form-group">
+          <%= form.label 'Treść' %>
+          <%= form.text_area :content, class: "form-control" %>
+        </div>
+
+        <%= form.submit "Dodaj Komentarz", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
