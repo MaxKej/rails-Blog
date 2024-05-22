@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [:edit, :update, :destroy]
 
   def list
     @posts = Post.all
@@ -53,5 +55,15 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def authorize_admin
+    unless current_user&.admin?
+      redirect_to @comment.post, alert: 'You are not authorized to perform this action.'
+    end
   end
 end

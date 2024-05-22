@@ -1,5 +1,6 @@
 <head>
   <title>Post</title>
+  <%= javascript_include_tag 'controllers/edit_post' %>
   <%= javascript_include_tag 'controllers/edit_comment' %>
 </head>
 
@@ -37,6 +38,28 @@
         <p><%= @post.author %></p>
         <p><%= @post.content %></p>
         <p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
+        <% if current_user&.admin? %>
+          <button class="btn btn-secondary edit-post-btn" data-post-id="<%= @post.id %>">Edytuj post</button>
+        <% end %>
+      </div>
+
+      <div id="post-edit-form-<%= @post.id %>" class="post-edit-form rounded border p-4 bg-light mb-4" style="display: none;">
+        <%= form_with(model: @post, local: true) do |form| %>
+          <div class="form-group">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.label :content %>
+            <%= form.text_area :content, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= form.submit 'Edytuj', class: "btn btn-primary" %>
+            <button type="button" class="btn btn-secondary cancel-edit-post-btn" data-post-id="<%= @post.id %>">Porzuć</button>
+          </div>
+        <% end %>
       </div>
       <% if @post.comments.any? %>
         <div class="comment-section rounded border p-4 bg-light mb-4" style="max-height: 300px; overflow-y: auto;">
