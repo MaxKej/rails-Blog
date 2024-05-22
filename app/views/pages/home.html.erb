@@ -23,6 +23,26 @@
           <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item">
+            <span class="nav-link">Cześć <%= current_user.email %></span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <span class="nav-link">Nie jesteś zalogowany</span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zarejestruj się", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zaloguj się", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
@@ -36,18 +56,14 @@
 </div>
 
 <% if current_user %>
-  <p>Hello <%= current_user.email %></p><br>
-  <p>You have roles: <%= current_user.roles.map(&:name).join(", ") %></p><br>
+  <p>Cześć <%= current_user.email %></p><br>
+  <p>Twoje role: <%= current_user.roles.map(&:name).join(", ") %></p><br>
   <% if current_user.has_role?(:admin) %>
-    <p>User Total count: <%= User.count %></p>
+    <p>Liczba wszystkich użytkowników: <%= User.count %></p>
   <% end %>
-  <%= link_to "Log Out", destroy_user_session_path, 'data-turbo-method': :delete %>
 <% else %>
-  <p>You are not signed in</p>
-  <p>
-    <%= link_to "Sign up", new_user_registration_path %><br>
-    <%= link_to "Login", new_user_session_path %>
-  </p>
+  <p>Nie jesteś zalogowany.</p><br>
+  <p>Możesz zamieszczać tylko komentarze.</p>
 <% end %>
 
 

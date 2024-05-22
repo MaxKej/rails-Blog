@@ -14,21 +14,40 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Dodaj nowy post", 'new', class: "nav-link" %>
+          <%= link_to "Dodaj nowy post", 'posts/new', class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Znajdź Post", '/find', class: "nav-link" %>
+          <%= link_to "Znajdź Post", 'find', class: "nav-link" %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to "Polityka Prywatności", '/privacy', class: "nav-link" %>
+          <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
         </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item">
+            <span class="nav-link">Cześć <%= current_user.email %></span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <span class="nav-link">Nie jesteś zalogowany</span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zarejestruj się", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zaloguj się", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
 </nav>
-
 
 <div class="container">
   <div class="row justify-content-center">

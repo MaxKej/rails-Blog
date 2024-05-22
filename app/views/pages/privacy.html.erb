@@ -2,11 +2,6 @@
   <title>Prywatność</title>
 </head>
 
-<%#= link_to "Strona Główna", root_path %>
-<%#= link_to "Dodaj nowy post", 'posts/new' %>
-<%#= link_to "Znajdź Post", 'find' %>
-<%#= link_to "Polityka Prywatności", 'privacy' %>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <%= link_to "Strona Główna", root_path, class: "navbar-brand" %>
@@ -28,9 +23,30 @@
           <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
         </li>
       </ul>
+      <ul class="navbar-nav ml-auto">
+        <% if current_user %>
+          <li class="nav-item">
+            <span class="nav-link">Cześć <%= current_user.email %></span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <span class="nav-link">Nie jesteś zalogowany</span>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zarejestruj się", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item ml-3">
+            <%= link_to "Zaloguj się", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
+
 
 <div class="container">
   <div class="row justify-content-center">
