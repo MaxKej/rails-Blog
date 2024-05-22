@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <%= link_to "Strona Główna", root_path, class: "navbar-brand" %>
+    <%= link_to "Strona Główna", home_pages_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,15 +12,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Dodaj nowy post", 'posts/new', class: "nav-link" %>
+          <%= link_to "Dodaj nowy post", new_post_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Znajdź Post", 'find', class: "nav-link" %>
+          <%= link_to "Znajdź Post", find_pages_path, class: "nav-link" %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to "Polityka Prywatności", 'privacy', class: "nav-link" %>
+          <%= link_to "Polityka Prywatności", privacy_pages_path, class: "nav-link" %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">

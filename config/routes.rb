@@ -26,20 +26,27 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
 
   resources :posts do
     resources :comments
   end
+  #
+  # get '/posts/new', to: 'posts#new', as: 'create_new_post'
 
-
-  resources :comments
-
-  get '/posts/new', to: 'posts#new', as: 'create_new_post'
-
-  get 'home', to: 'pages#home', as: 'home_page'
-  get 'find', to: 'pages#find', as: 'find_page'
-  get 'privacy', to: 'pages#privacy', as: 'privacy_page'
   root 'pages#home'
+
+  resources :pages do
+    collection do
+      get 'home'
+      get 'find'
+      get 'privacy'
+    end
+  end
+
+
+
+  # get 'home', to: 'pages#home', as: 'home_page'
+  # get 'find', to: 'pages#find', as: 'find_page'
+  # get 'privacy', to: 'pages#privacy', as: 'privacy_page'
 
 end
