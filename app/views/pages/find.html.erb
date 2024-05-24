@@ -67,9 +67,8 @@
         <% @posts.each do |post| %>
           <div class="rounded border p-4 bg-light mb-4">
             <%= link_to post.title, post_path(post), class: "post-link" %>
-            <p><%= post.author %></p>
             <p><%= post.content %></p>
-            <p><%= post.timestamp&.strftime("%d %b %Y %H:%M:%S") %></p>
+            <p><%= post.created_at&.strftime("%d %b %Y %H:%M:%S") %></p>
             <!-- Add any other post details you want to display -->
             <% if current_user&.admin? %>
               <%= form_with(model: post, method: :delete, local: true) do %>

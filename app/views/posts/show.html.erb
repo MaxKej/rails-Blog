@@ -54,7 +54,7 @@
     <div class="col-lg-8">
       <div class="rounded border p-4 bg-light">
         <h1><%= @post.title %></h1>
-        <p><%= @post.author %></p>
+        <p><%= @post.user.email if @post.user %></p>s
         <p><%= @post.content %></p>
         <p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
         <% if current_user&.admin? %>
@@ -81,12 +81,17 @@
         <% end %>
       </div>
       <% if @post.comments.any? %>
-        <div class="comment-section rounded border p-4 bg-light mb-4" style="max-height: 300px; overflow-y: auto;">
+        <div class="comment-section rounded border p-4 bg-light mb-4" style="max-height: 400px; overflow-y: auto;">
           <% @post.comments.each do |comment| %>
             <div class="comment rounded border p-4 bg-light mb-4">
-              <p><%= comment.comment_author %></p>
+              <% if comment.user %>
+                <p><%= comment.user.email %></p>
+              <% else %>
+                <p>Gość</p>
+              <% end %>
+
               <p><%= comment.content %></p>
-              <p><%= comment.timestamp&.strftime("%d %b %Y %H:%M:%S") %></p>
+              <p><%= comment.updated_at&.strftime("%d %b %Y %H:%M:%S") %></p>
               <% if current_user&.admin? %>
                 <button class="btn btn-secondary edit-comment-btn" data-comment-id="<%= comment.id %>">Edytuj komentarz</button>
 

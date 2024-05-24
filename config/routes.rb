@@ -30,8 +30,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  #
-  # get '/posts/new', to: 'posts#new', as: 'create_new_post'
 
   root 'pages#home'
 
@@ -42,11 +40,5 @@ Rails.application.routes.draw do
       get 'privacy'
     end
   end
-
-
-
-  # get 'home', to: 'pages#home', as: 'home_page'
-  # get 'find', to: 'pages#find', as: 'find_page'
-  # get 'privacy', to: 'pages#privacy', as: 'privacy_page'
 
 end

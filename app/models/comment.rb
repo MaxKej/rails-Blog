@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :post
-  # attribute :comment_author, :string
-  # attribute :timestamp, :datetime
+  belongs_to :user, optional: true
 end

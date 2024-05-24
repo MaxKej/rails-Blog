@@ -22,8 +22,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
-    @comment.comment_author = params[:comment][:comment_author]  # Set the comment_author from params
-    @comment.timestamp = Time.now  # Set the timestamp to the current time
+    @comment.user_id = current_user.id if user_signed_in?
 
     if @comment.save
       redirect_to @post, notice: 'Comment was successfully created.'

@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   validates :roles, presence: true
 
+  has_many :posts
+
   def set_default_role
     self.add_role(:normal)
   end
