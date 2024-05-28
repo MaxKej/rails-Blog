@@ -77,11 +77,12 @@
             <% end %>
           </div>
         <% end %>
+
+        <%= paginate @posts%>
       <% else %>
         <p class="rounded border p-4 bg-light">Nie znaleziono żadnego postu.</p>
       <% end %>
     </div>
   </div>
 </div>
-
 

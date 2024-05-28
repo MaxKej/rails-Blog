@@ -1,19 +1,29 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_admin, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :download_pdf, :edit, :update, :destroy]
+  before_action :authorize_admin, only: [:edit, :update, :destroy, :download_pdf]
 
   def list
-    @posts = Post.all
-  end
-
-  def find
-    @posts = Post.where("title LIKE ?", "%#{params[:title]}%")
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
+    @comments = @post.comments.page(params[:page]).per(10)
+  end
+
+  def download_pdf
+    @comments = @post.comments
+
+    respond_to do |format|
+      format.html { render plain: "This action is only for PDF format requests." }
+      format.pdf do
+        render pdf: "post_#{@post.id}",
+               template: 'posts/show.pdf.erb',
+               layout: 'pdf.html'
+      end
+    end
   end
 
   def new

@@ -1,0 +1,22 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.user.email if @post.user %></p>
+<p><%= @post.content %></p>
+<p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
+
+<% if @comments.any? %>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <% if comment.user %>
+          <p><%= comment.user.email %></p>
+        <% else %>
+          <p>Gość</p>
+        <% end %>
+        <p><%= comment.content %></p>
+        <p><%= comment.updated_at&.strftime("%d %b %Y %H:%M:%S") %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>Brak komentarzy.</p>
+<% end %>

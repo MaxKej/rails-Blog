@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    member do
+      get 'download_pdf'
+    end
   end
 
   root 'pages#home'

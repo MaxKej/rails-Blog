@@ -76,3 +76,11 @@ gem "devise", "~> 4.9"
 gem 'rolify'
 
 gem 'administrate'
+
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+
+gem 'rails-i18n'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

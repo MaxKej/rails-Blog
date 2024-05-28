@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_admin!, only: [:destroy, :update]
 
   def list
-    @comment = Comment.all
+    @comments = Comment.page(params[:page]).per(10)
   end
 
   def show
@@ -30,9 +30,6 @@ class CommentsController < ApplicationController
       redirect_to @post, alert: 'Failed to create comment.'
     end
   end
-
-
-
 
   def edit
   end

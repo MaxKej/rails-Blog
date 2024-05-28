@@ -54,11 +54,12 @@
     <div class="col-lg-8">
       <div class="rounded border p-4 bg-light">
         <h1><%= @post.title %></h1>
-        <p><%= @post.user.email if @post.user %></p>s
+        <p><%= @post.user.email if @post.user %></p>
         <p><%= @post.content %></p>
         <p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
         <% if current_user&.admin? %>
           <button class="btn btn-secondary edit-post-btn" data-post-id="<%= @post.id %>">Edytuj post</button>
+          <%= link_to 'Pobierz PDF', download_pdf_post_path(@post), class: 'btn btn-secondary', target: '_blank' %>
         <% end %>
       </div>
 
@@ -80,9 +81,9 @@
           </div>
         <% end %>
       </div>
-      <% if @post.comments.any? %>
+      <% if @comments.any? %>
         <div class="comment-section rounded border p-4 bg-light mb-4" style="max-height: 400px; overflow-y: auto;">
-          <% @post.comments.each do |comment| %>
+          <% @comments.each do |comment| %>
             <div class="comment rounded border p-4 bg-light mb-4">
               <% if comment.user %>
                 <p><%= comment.user.email %></p>
@@ -115,6 +116,7 @@
               <% end %>
             </div>
           <% end %>
+          <%= paginate @comments %>
         </div>
       <% else %>
         <p class="rounded border p-4 bg-light">Brak komentarzy.</p>
@@ -122,5 +124,6 @@
     </div>
   </div>
 </div>
+
 
 <%= render 'comments/form' %>

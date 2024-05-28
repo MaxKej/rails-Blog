@@ -5,6 +5,4 @@
   <%= f.select(field.attribute_key, nil, {}, multiple: true) do %>
     <%= options_for_select(field.associated_resource_options, field.selected_options) %>
   <% end %>
-</div># app/views/fields/has_many_roles_field/_index.html.erb
-<%= field.data.pluck(:name).join(' ') %># app/views/fields/has_many_roles_field/_show.html.erb
-<%= field.data.pluck(:name).join(' ') %>
+</div>
