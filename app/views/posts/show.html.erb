@@ -59,8 +59,8 @@
         <p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
         <% if current_user&.admin? %>
           <button class="btn btn-secondary edit-post-btn" data-post-id="<%= @post.id %>">Edytuj post</button>
-          <%= link_to 'Pobierz PDF', download_pdf_post_path(@post), class: 'btn btn-secondary', target: '_blank' %>
-        <% end %>
+          <%= link_to 'Pobierz PDF', download_pdf_post_path(@post, format: :pdf), class: 'btn btn-secondary', target: '_blank' %>
+      <% end %>
       </div>
 
       <div id="post-edit-form-<%= @post.id %>" class="post-edit-form rounded border p-4 bg-light mb-4" style="display: none;">

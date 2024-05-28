@@ -84,3 +84,9 @@ gem 'rails-i18n'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'delayed_job_active_record'
+
+gem 'nokogiri'
+
+gem 'prawn'
+gem 'httparty'
