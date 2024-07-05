@@ -1,7 +1,44 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.user.email if @post.user %></p>
-<p><%= @post.content %></p>
-<p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+  <style>
+      .post, .comment {
+          border: 1px solid #ccc;
+          margin: 20px auto;
+          padding: 15px;
+          text-align: center;
+          width: 80%;
+          box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .comments {
+          margin-top: 30px;
+      }
+
+      .comment {
+          margin-bottom: 15px;
+      }
+
+      body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+      }
+  </style>
+</head>
+<body>
+<div class="post">
+  <h1><%= @post.title %></h1>
+  <p><%= @post.user.email if @post.user %></p>
+  <p><%= @post.content %></p>
+  <p>Ostatnia data modyfikacji: <%= @post.updated_at.strftime("%d %b %Y %H:%M:%S") %></p>
+</div>
 
 <% if @comments.any? %>
   <div class="comments">
@@ -20,3 +57,5 @@
 <% else %>
   <p>Brak komentarzy.</p>
 <% end %>
+</body>
+</html>

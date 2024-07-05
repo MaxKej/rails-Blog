@@ -1,5 +1,3 @@
-require 'wicked_pdf'
-
 class PagesController < ApplicationController
   def home
   end

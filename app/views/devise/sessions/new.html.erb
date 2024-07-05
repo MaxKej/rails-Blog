@@ -1,29 +1,36 @@
-<h2>Log in</h2>
+<h2 class="text-center mb-4">Logowanie</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
+        <div class="form-group mb-3">
+          <%= f.label :email, class: "control-label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <div class="form-group mb-3">
+          <%= f.label :hasło, class: "control-label" %>
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group form-check mb-3">
+            <%= f.check_box :remember_me, class: "form-check-input" %>
+            <%= f.label :zapamiętaj_mnie, class: "form-check-label" %>
+          </div>
+        <% end %>
+
+        <div class="form-group text-center">
+          <%= f.submit "Zaloguj się", class: "btn btn-primary", data: { turbo: false } %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
 
 
-<%= link_to "Log Out", destroy_user_session_path, 'data-turbo-method': :delete %>
+
+<%#= link_to "Wyloguj się", destroy_user_session_path, 'data-turbo-method': :delete %>
