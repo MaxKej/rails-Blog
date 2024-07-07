@@ -6,6 +6,9 @@ W kontenerze należy wykonać komendy
 sudo apt install nodejs
 sudo apt install npm
 
+Przed uruchomieniem należy dodać uprawnienia dla kontenera
+chmod -R 777 <ścieżka do katalogu projektu>
+
 Aby uruchomić aplikacją rails należy przejść do katalogu aplikacji i wykonać poniższe komendy
 bundle install
 rails s -b 0.0.0.0 -p <numer portu kontenera>
