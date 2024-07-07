@@ -6,6 +6,8 @@ W kontenerze należy wykonać komendy
 sudo apt install nodejs
 sudo apt install npm
 
+Aby uruchomić aplikacją rails
+rails s -b 0.0.0.0 -p <numer portu kontenera>
 
 Aby przypisać użytkownikowi rolę administratora, należy w konsoli Rails wykonać:
 new_admin = User.find_by(email: 'email administratora')
