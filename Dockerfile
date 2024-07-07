@@ -18,6 +18,8 @@ RUN export PATH="$PATH:$HOME/.rvm/bin"
 RUN . ~/.rvm/scripts/rvm
 RUN rvm install 3.1.2
 RUN gem install rails
+RUN sudo apt install nodejs
+RUN sudo apt install npm
 
 WORKDIR /home/hosting
 
