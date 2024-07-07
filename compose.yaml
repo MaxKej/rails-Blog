@@ -1,0 +1,13 @@
+services:
+  ruby_container:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+    # - <katalog lokalny>:/home/hosting/workspace
+    #stdin_open: true
+    tty: true
+
+
