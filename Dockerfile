@@ -10,18 +10,13 @@ RUN useradd -m -s /bin/bash hosting && \
 
 USER hosting
 
-RUN bash --login
-RUN gpg2 --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-RUN \curl -sSL https://get.rvm.io | bash -s stable
-RUN export PATH="$PATH:$HOME/.rvm/bin"
-
-RUN . ~/.rvm/scripts/rvm
-RUN rvm install 3.1.2
-RUN gem install rails
-RUN sudo apt install nodejs
-RUN sudo apt install npm
+RUN gpg2 --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \
+    curl -sSL https://get.rvm.io | bash -s stable && \
+    echo 'source $HOME/.rvm/scripts/rvm' >> ~/.bashrc && \
+    /bin/bash -c "source $HOME/.rvm/scripts/rvm && rvm install 3.1.2 && rvm use 3.1.2 --default && gem install rails"
 
 WORKDIR /home/hosting
 
 CMD ["bash"]
+
 
