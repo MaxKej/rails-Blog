@@ -2,10 +2,6 @@
 W pliku compose.yaml należy podać ścieżkę lokalnego katalogu, w którym będą zapisywane pliki projektu.
 Plik Rails users.txt zawiera nazwy i hasła użytkowników w bazie danych aplikacji.
 
-W kontenerze należy wykonać komendy
-sudo apt install nodejs
-sudo apt install npm
-
 Przed uruchomieniem należy dodać uprawnienia dla kontenera
 chmod -R 777 <ścieżka do katalogu projektu>
 
