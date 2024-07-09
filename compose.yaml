@@ -8,6 +8,6 @@ services:
       - "1080:1080"    # Port dla inerfejsu MailCatcher
       - "1025:1025"    # Port dla serwera SMTP MailCatcher
     volumes:
-      - /home/max/Work:/home/hosting/workspace
+      - <katalog lokalny>:/home/hosting/workspace
     #stdin_open: true
     tty: true
