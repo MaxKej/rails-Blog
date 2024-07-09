@@ -4,10 +4,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "8080:80"      # Port aplikacji Rails
+      - "1080:1080"    # Port dla inerfejsu MailCatcher
+      - "1025:1025"    # Port dla serwera SMTP MailCatcher
     volumes:
-    # - <katalog lokalny>:/home/hosting/workspace
+      - /home/max/Work:/home/hosting/workspace
     #stdin_open: true
     tty: true
-
-
