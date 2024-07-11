@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/application.iml" filepath="$PROJECT_DIR$/.idea/modules/application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rails-Blog.iml" filepath="$PROJECT_DIR$/.idea/rails-Blog.iml" />
     </modules>
   </component>

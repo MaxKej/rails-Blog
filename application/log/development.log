@@ -44879,3 +44879,76 @@ Processing by PagesController#find as HTML
 Completed 200 OK in 173ms (Views: 162.1ms | ActiveRecord: 2.5ms | Allocations: 20204)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRole Load (0.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user4@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user4@test.com"], ["encrypted_password", "$2a$12$3Qv0SlBhXUhO8ANLjQhcOuSNcLq5E7/D4RN/IPRw3CBtMpS4M/sQy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-11 11:17:06.416951"], ["updated_at", "2024-07-11 11:17:06.416951"]]
+  [1m[36mUser::HABTM_Roles Create (0.1ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 6], ["role_id", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user5@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user5@test.com"], ["encrypted_password", "$2a$12$d0jfPC9KGJq6HfMI9zbITeBiQVLuqaMyAG5DCTd6lPahZ/aJ8IZ46"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-11 11:17:06.799805"], ["updated_at", "2024-07-11 11:17:06.799805"]]
+  [1m[36mUser::HABTM_Roles Create (0.1ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 7], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user6@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user6@test.com"], ["encrypted_password", "$2a$12$SIm88v3ZcOg6JexGMBoJke7v7/PuLbcEFuFhh32uSOBFE3D0zIhze"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-11 11:17:07.168414"], ["updated_at", "2024-07-11 11:17:07.168414"]]
+  [1m[36mUser::HABTM_Roles Create (0.1ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 8], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user7@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user7@test.com"], ["encrypted_password", "$2a$12$dBoV9VaZ7Hr0GWhUBVTbt.dZAGBRhHz.c4EmBDujbeTFmhP9UmbMq"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-11 11:17:07.536527"], ["updated_at", "2024-07-11 11:17:07.536527"]]
+  [1m[36mUser::HABTM_Roles Create (0.1ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 9], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user8@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user8@test.com"], ["encrypted_password", "$2a$12$YbaBo/DME9afpVMgE23KzujkSSPjPtp.GE3Lv8QSs6o3qP.hm3.ny"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-11 11:17:07.905360"], ["updated_at", "2024-07-11 11:17:07.905360"]]
+  [1m[36mUser::HABTM_Roles Create (0.1ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 10], ["role_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user4@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user5@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user6@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user7@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRole Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = ? AND "roles"."id" != ? LIMIT ?[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user8@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
