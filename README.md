@@ -1,5 +1,4 @@
 # rails-Blog
-W pliku compose.yaml należy podać ścieżkę lokalnego katalogu, w którym będą zapisywane pliki projektu.
 Plik Rails users.txt zawiera nazwy i hasła użytkowników w bazie danych aplikacji.
 
 Przed uruchomieniem należy dodać uprawnienia dla kontenera
