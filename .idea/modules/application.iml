@@ -9,6 +9,9 @@
       </configuration>
     </facet>
   </component>
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/../../application">
       <sourceFolder url="file://$MODULE_DIR$/../../application/features" isTestSource="true" />
@@ -368,6 +371,10 @@
     </entry>
     <entry key="public/stylesheets">
       <value>file://$MODULE_DIR$/../../application/public/stylesheets</value>
+    </entry>
+    <entry key="test/mailers/previews">
+      <value>file://$MODULE_DIR$/../../application/test/mailers/previews</value>
+      <value>file://$MODULE_DIR$/../../application/test/mailers/previews</value>
     </entry>
     <entry key="tmp">
       <value>file://$MODULE_DIR$/../../application/tmp</value>

@@ -78,4 +78,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { :address => '0.0.0.0', :port => 1025 }
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 80 }
+
 end
