@@ -8,9 +8,5 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 User.create([
-              { email: 'user4@test.com', password: '#User4' },
-              { email: 'user5@test.com', password: '#User5' },
-              { email: 'user6@test.com', password: '#User6' },
-              { email: 'user7@test.com', password: '#User7' },
-              { email: 'user8@test.com', password: '#User8' }
+              { email: 'user9@test.com', password: '#User9' }
             ])
