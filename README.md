@@ -9,6 +9,7 @@ Aby uruchomić aplikację rails należy przejść do katalogu aplikacji
 i wykonać poniższe komendy:
 
 bundle install
+
 rails s -b 0.0.0.0 -p <numer_portu_kontnera>
 
 
