@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   # enum role: [:user, :moderator, :admin]
 
+
   after_initialize :set_default_role, if: :new_record?
 
   validates :roles, presence: true
@@ -14,10 +15,11 @@ class User < ApplicationRecord
   has_many :posts
 
   def set_default_role
-    self.add_role(:normal)
+    self.add_role(:normal) if self.roles.blank?
   end
 
   def admin?
     self.has_role?(:admin)
   end
 end
+

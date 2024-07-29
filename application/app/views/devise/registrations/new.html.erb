@@ -12,16 +12,16 @@
         </div>
 
         <div class="form-group mb-3">
-          <%= f.label :hasło, class: "control-label" %>
+          <%= f.label :password, "Hasło", class: "control-label" %> <!-- Changed from :hasło to :password -->
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> znaków minimum)</em>
           <% end %>
-          <%= f.password_field :hasło, autocomplete: "new-password", class: "form-control" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %> <!-- Changed from :hasło to :password -->
         </div>
 
         <div class="form-group mb-3">
-          <%= f.label :potwierdź_hasło, class: "control-label" %>
-          <%= f.password_field :potwierdź_hasło, autocomplete: "new-password", class: "form-control" %>
+          <%= f.label :password_confirmation, "Potwierdź hasło", class: "control-label" %> <!-- Changed from :potwierdź_hasło to :password_confirmation -->
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %> <!-- Changed from :potwierdź_hasło to :password_confirmation -->
         </div>
 
         <div class="form-group text-center mb-3">
@@ -33,3 +33,4 @@
     </div>
   </div>
 </div>
+

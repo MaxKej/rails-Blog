@@ -46605,3 +46605,1422 @@ Processing by Devise::PasswordsController#edit as HTML
 Completed 200 OK in 67ms (Views: 52.3ms | ActiveRecord: 0.1ms | Allocations: 8020)
 
 
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-17 11:28:53 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (5.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 5756)
+Completed 200 OK in 81ms (Views: 50.7ms | ActiveRecord: 8.9ms | Allocations: 8227)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2024-07-17 11:29:01 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Zaloguj się"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "emailtest@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 303 See Other in 372ms (ActiveRecord: 0.8ms | Allocations: 2846)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 28.4ms | Allocations: 4900)
+  Rendered layout layouts/application.html.erb (Duration: 64.8ms | Allocations: 9901)
+Completed 200 OK in 78ms (Views: 68.8ms | ActiveRecord: 1.2ms | Allocations: 10771)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 29.8ms | Allocations: 2893)
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 7665)
+Completed 200 OK in 65ms (Views: 58.3ms | ActiveRecord: 2.1ms | Allocations: 7953)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:21 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (0.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 33.1ms | Allocations: 2887)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 7658)
+Completed 200 OK in 65ms (Views: 60.6ms | ActiveRecord: 0.9ms | Allocations: 7927)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 26.4ms | Allocations: 2905)
+  Rendered layout layouts/application.html.erb (Duration: 57.9ms | Allocations: 7679)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 0.7ms | Allocations: 7949)
+
+
+Started GET "/users/sign_out" for 172.18.0.1 at 2024-07-17 11:29:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 303 See Other in 13ms (ActiveRecord: 1.6ms | Allocations: 1936)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 454)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 5231)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 5503)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-17 11:29:26 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 74)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1070)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 5840)
+Completed 200 OK in 62ms (Views: 44.7ms | ActiveRecord: 0.2ms | Allocations: 7995)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-17 11:29:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 5778)
+Completed 200 OK in 64ms (Views: 47.1ms | ActiveRecord: 0.1ms | Allocations: 7887)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-17 11:29:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 123)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 5766)
+Completed 200 OK in 51ms (Views: 32.7ms | ActiveRecord: 0.3ms | Allocations: 7928)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2024-07-17 11:29:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Zaloguj się"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "emailtest@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 303 See Other in 364ms (ActiveRecord: 0.2ms | Allocations: 2533)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-17 11:29:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (0.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 21.2ms | Allocations: 2872)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 7646)
+Completed 200 OK in 60ms (Views: 54.1ms | ActiveRecord: 0.6ms | Allocations: 7915)
+
+
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "blog_development" ENCODING = 'unicode'[0m
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(892336952976185220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-07-26 12:27:04.431488', '2024-07-26 12:27:04.431497') RETURNING "key"[0m
+Migrating to CreatePosts (20240425110733)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "content" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240425110733') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20240425110756)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "post_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240425110756') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFieldsToPostsAndComments (20240506095434)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "author" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "posts" ADD "timestamp" timestamp(6)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "comment_author" character varying[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "comments" ADD "timestamp" timestamp(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240506095434') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20240510112359)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240510112359') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RolifyCreateRoles (20240515085306)
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE "roles" ("id" bigserial primary key, "name" character varying, "resource_type" character varying, "resource_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE INDEX "index_roles_on_resource" ON "roles" ("resource_type", "resource_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users_roles" ("user_id" bigint, "role_id" bigint)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE INDEX "index_users_roles_on_user_id" ON "users_roles" ("user_id")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE INDEX "index_users_roles_on_role_id" ON "users_roles" ("role_id")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE INDEX "index_roles_on_name" ON "roles" ("name")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE INDEX "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" ("name", "resource_type", "resource_id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_users_roles_on_user_id_and_role_id" ON "users_roles" ("user_id", "role_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240515085306') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserToComments (20240524105342)
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mALTER TABLE "comments" ADD "user_id" bigint[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "timestamp"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "comment_author"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240524105342') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserToPosts (20240524105851)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "posts" ADD CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "timestamp"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "author"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240524105851') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.18.0.1 at 2024-07-26 12:27:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 40.5ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 7001.5ms | Allocations: 84986)
+Completed 200 OK in 9654ms (Views: 7042.2ms | ActiveRecord: 0.0ms | Allocations: 259889)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 12:28:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-26 12:28:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (4.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mRole Load (18.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (66.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mRole Create (21.9ms)[0m  [1m[32mINSERT INTO "roles" ("name", "resource_type", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "normal"], ["resource_type", nil], ["resource_id", nil], ["created_at", "2024-07-26 12:28:05.135624"], ["updated_at", "2024-07-26 12:28:05.135624"]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mRole Exists? (137.2ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (49.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mRole Create (9.5ms)[0m  [1m[32mINSERT INTO "roles" ("name", "resource_type", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "normal"], ["resource_type", nil], ["resource_id", nil], ["created_at", "2024-07-26 12:28:05.223872"], ["updated_at", "2024-07-26 12:28:05.223872"]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (47.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 30.1ms | Allocations: 1040)
+  Rendered devise/shared/_links.html.erb (Duration: 6.9ms | Allocations: 1242)
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 735)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 228.7ms | Allocations: 6383)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 240.9ms | Allocations: 6871)
+  Rendered layout layouts/application.html.erb (Duration: 282.9ms | Allocations: 15130)
+Completed 200 OK in 2060ms (Views: 313.1ms | ActiveRecord: 493.1ms | Allocations: 73563)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 284.0ms | Allocations: 17176)
+Completed 200 OK in 2151ms (Views: 329.1ms | ActiveRecord: 231.9ms | Allocations: 79054)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2024-07-26 12:28:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Zaloguj się"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 47ms (ActiveRecord: 4.4ms | Allocations: 2520)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Zaloguj się"}
+  [1m[36mRole Load (1.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 123)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1117)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 6001)
+Completed 200 OK in 497ms (Views: 34.0ms | ActiveRecord: 1.2ms | Allocations: 9667)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2024-07-26 12:28:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Zaloguj się"}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms | Allocations: 504)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Zaloguj się"}
+  [1m[36mRole Load (0.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 978)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 5745)
+Completed 200 OK in 68ms (Views: 40.8ms | ActiveRecord: 0.6ms | Allocations: 7838)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 12:28:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (2.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1011)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 5877)
+Completed 200 OK in 50ms (Views: 33.0ms | ActiveRecord: 2.1ms | Allocations: 8065)
+
+
+Started GET "/users/password/new" for 172.18.0.1 at 2024-07-26 12:28:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::PasswordsController#new as HTML
+  [1m[36mRole Load (1.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 128)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 5987)
+Completed 200 OK in 87ms (Views: 33.9ms | ActiveRecord: 1.7ms | Allocations: 8896)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-26 12:53:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (1.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 993)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 5759)
+Completed 200 OK in 73ms (Views: 22.9ms | ActiveRecord: 11.5ms | Allocations: 10949)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-26 12:53:40 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 434)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 5213)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 5488)
+
+
+Started GET "/pages/find" for 172.18.0.1 at 2024-07-26 12:53:41 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#find as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/find.html.erb within layouts/application
+  [1m[36mPost Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:66
+  Rendered pages/find.html.erb within layouts/application (Duration: 18.1ms | Allocations: 3270)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 8243)
+Completed 200 OK in 58ms (Views: 26.0ms | ActiveRecord: 6.8ms | Allocations: 12861)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-26 12:53:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 4.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 5520)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 5857)
+
+
+Started GET "/pages/find" for 172.18.0.1 at 2024-07-26 12:53:43 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#find as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/find.html.erb within layouts/application
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:66
+  Rendered pages/find.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 6541)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 1.2ms | Allocations: 6930)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 12:53:43 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1080)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 5945)
+Completed 200 OK in 49ms (Views: 22.9ms | ActiveRecord: 0.7ms | Allocations: 8218)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-26 12:53:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 994)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 5855)
+Completed 200 OK in 36ms (Views: 22.2ms | ActiveRecord: 0.9ms | Allocations: 8066)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 12:53:45 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 5778)
+Completed 200 OK in 34ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 7931)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-26 12:54:27 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "hasło"=>"#Test123", "potwierdź_hasło"=>"#Test123"}, "commit"=>"Zarejestruj się"}
+[31mUnpermitted parameters: :hasło, :potwierdź_hasło. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f9268e48200>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "hasło"=>"#Test123", "potwierdź_hasło"=>"#Test123"}, "commit"=>"Zarejestruj się", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "emailtest@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 918)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 74)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2012)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 6908)
+Completed 422 Unprocessable Entity in 99ms (Views: 29.6ms | ActiveRecord: 20.1ms | Allocations: 20349)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-26 13:12:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "hasło"=>"#Test123", "potwierdź_hasło"=>"#Test123"}, "commit"=>"Zarejestruj się"}
+[31mUnpermitted parameters: :hasło, :potwierdź_hasło. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f9268c83848>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"emailtest@test.com", "hasło"=>"#Test123", "potwierdź_hasło"=>"#Test123"}, "commit"=>"Zarejestruj się", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mRole Load (4.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (11.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "emailtest@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 4.6ms | Allocations: 657)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1652)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 6505)
+Completed 422 Unprocessable Entity in 187ms (Views: 36.6ms | ActiveRecord: 43.7ms | Allocations: 18332)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-26 13:12:57 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 449)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 5263)
+Completed 200 OK in 47ms (Views: 42.3ms | ActiveRecord: 0.0ms | Allocations: 5536)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-26 13:12:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 994)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 5855)
+Completed 200 OK in 39ms (Views: 23.6ms | ActiveRecord: 1.0ms | Allocations: 8077)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 13:12:59 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 5873)
+Completed 200 OK in 38ms (Views: 24.4ms | ActiveRecord: 0.6ms | Allocations: 8028)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-26 13:43:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (1.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 5778)
+Completed 200 OK in 110ms (Views: 43.5ms | ActiveRecord: 13.2ms | Allocations: 10778)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-26 13:43:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "hasło"=>"#Test2", "potwierdź_hasło"=>"#Test2"}, "commit"=>"Zarejestruj się"}
+[31mUnpermitted parameters: :hasło, :potwierdź_hasło. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f9268d480f8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "hasło"=>"#Test2", "potwierdź_hasło"=>"#Test2"}, "commit"=>"Zarejestruj się", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mRole Load (1.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (7.9ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 657)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1652)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 6418)
+Completed 422 Unprocessable Entity in 80ms (Views: 31.7ms | ActiveRecord: 12.4ms | Allocations: 14884)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mRole Load (1.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user9@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:14:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 27.8ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 927.7ms | Allocations: 78697)
+Completed 200 OK in 1483ms (Views: 940.8ms | ActiveRecord: 0.0ms | Allocations: 114903)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:14:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:14:56 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (9.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mRole Load (7.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 9.3ms | Allocations: 948)
+  Rendered devise/shared/_links.html.erb (Duration: 6.2ms | Allocations: 633)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 78.7ms | Allocations: 5623)
+  Rendered devise/shared/_links.html.erb (Duration: 10.1ms | Allocations: 737)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 94.9ms | Allocations: 6404)
+  Rendered layout layouts/application.html.erb (Duration: 233.7ms | Allocations: 14918)
+Completed 200 OK in 5802ms (Views: 253.7ms | ActiveRecord: 4031.8ms | Allocations: 64246)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 234.9ms | Allocations: 15816)
+Completed 200 OK in 4561ms (Views: 268.4ms | ActiveRecord: 228.7ms | Allocations: 56965)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:15:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (1.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 17.0ms | Allocations: 1022)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 5794)
+Completed 200 OK in 128ms (Views: 85.4ms | ActiveRecord: 1.7ms | Allocations: 8341)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:15:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (5.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 100.2ms | Allocations: 5778)
+Completed 200 OK in 153ms (Views: 106.0ms | ActiveRecord: 5.6ms | Allocations: 7950)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-29 10:16:29 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "hasło"=>"#Test2", "potwierdź_hasło"=>"#Test2"}, "commit"=>"Zarejestruj się"}
+[31mUnpermitted parameters: :hasło, :potwierdź_hasło. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f0dc55599f0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "hasło"=>"#Test2", "potwierdź_hasło"=>"#Test2"}, "commit"=>"Zarejestruj się", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mRole Load (8.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 9.5ms | Allocations: 936)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 74)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 2037)
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 6925)
+Completed 422 Unprocessable Entity in 163ms (Views: 55.0ms | ActiveRecord: 45.5ms | Allocations: 17955)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:23:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 27.7ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 801.1ms | Allocations: 78702)
+Completed 200 OK in 1388ms (Views: 818.8ms | ActiveRecord: 0.0ms | Allocations: 114908)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:23:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (10.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 9.1ms | Allocations: 244)
+  Rendered devise/shared/_links.html.erb (Duration: 24.9ms | Allocations: 562)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 145.5ms | Allocations: 3913)
+  Rendered layout layouts/application.html.erb (Duration: 224.6ms | Allocations: 8881)
+Completed 200 OK in 1652ms (Views: 274.1ms | ActiveRecord: 234.6ms | Allocations: 47703)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-29 10:23:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj się"}
+  [1m[36mRole Load (10.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17:in `set_default_role'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 568)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 74)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1474)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 6362)
+Completed 422 Unprocessable Entity in 523ms (Views: 39.1ms | ActiveRecord: 28.4ms | Allocations: 18181)
+
+
+  [1m[36mRole Load (1.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 OFFSET $2[0m  [["name", "normal"], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole::HABTM_Users Delete All (7.0ms)[0m  [1m[31mDELETE FROM "users_roles" WHERE "users_roles"."role_id" = $1[0m  [["role_id", 2]]
+  [1m[36mRole Destroy (0.9ms)[0m  [1m[31mDELETE FROM "roles" WHERE "roles"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (2.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  [1m[36mRole Load (3.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (5.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mRole Create (9.4ms)[0m  [1m[32mINSERT INTO "roles" ("name", "resource_type", "resource_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "admin"], ["resource_type", nil], ["resource_id", nil], ["created_at", "2024-07-29 10:30:37.329173"], ["updated_at", "2024-07-29 10:30:37.329173"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for 172.18.0.1 at 2024-07-29 10:31:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:31:49 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 53.4ms | Allocations: 1258)
+  Rendered layout layouts/application.html.erb (Duration: 1321.8ms | Allocations: 78516)
+Completed 200 OK in 1405ms (Views: 1346.0ms | ActiveRecord: 0.0ms | Allocations: 80983)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-29 10:31:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 15.3ms | Allocations: 766)
+  Rendered layout layouts/application.html.erb (Duration: 210.9ms | Allocations: 5543)
+Completed 200 OK in 226ms (Views: 214.1ms | ActiveRecord: 0.0ms | Allocations: 5903)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:31:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:31:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (3.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  [1m[36mRole Load (7.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 5.4ms | Allocations: 881)
+  Rendered devise/shared/_links.html.erb (Duration: 6.5ms | Allocations: 632)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.9ms | Allocations: 5664)
+  Rendered devise/shared/_links.html.erb (Duration: 5.3ms | Allocations: 734)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 49.8ms | Allocations: 6000)
+  Rendered layout layouts/application.html.erb (Duration: 93.0ms | Allocations: 14443)
+  Rendered layout layouts/application.html.erb (Duration: 98.8ms | Allocations: 15526)
+Completed 200 OK in 326ms (Views: 108.9ms | ActiveRecord: 36.6ms | Allocations: 48406)
+
+
+Completed 200 OK in 512ms (Views: 112.7ms | ActiveRecord: 71.0ms | Allocations: 63888)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:31:52 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (1.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 833)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 5604)
+Completed 200 OK in 40ms (Views: 24.8ms | ActiveRecord: 1.2ms | Allocations: 7902)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-29 10:32:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj się"}
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (7.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "user2@test.com"], ["encrypted_password", "$2a$12$I.gPg.k0KBysPC9cXD58JeNVlHbapqAqsTqHrjz0/6AiqJOOUMZm."], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-29 10:32:04.662118"], ["updated_at", "2024-07-29 10:32:04.662118"]]
+  [1m[36mUser::HABTM_Roles Create (24.4ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 1], ["role_id", 1]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/
+Completed 303 See Other in 511ms (ActiveRecord: 53.4ms | Allocations: 14912)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:32:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (1.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 37.7ms | Allocations: 5062)
+  Rendered layout layouts/application.html.erb (Duration: 59.5ms | Allocations: 9951)
+Completed 200 OK in 66ms (Views: 55.5ms | ActiveRecord: 6.1ms | Allocations: 10248)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-29 10:32:06 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/privacy.html.erb:27
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1246)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 6017)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.4ms | Allocations: 6292)
+
+
+Started GET "/pages/find" for 172.18.0.1 at 2024-07-29 10:32:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#find as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/find.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/find.html.erb:27
+  [1m[36mPost Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:66
+  Rendered pages/find.html.erb within layouts/application (Duration: 28.3ms | Allocations: 4093)
+  Rendered layout layouts/application.html.erb (Duration: 60.3ms | Allocations: 8978)
+Completed 200 OK in 79ms (Views: 54.2ms | ActiveRecord: 8.1ms | Allocations: 11045)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-29 10:32:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/privacy.html.erb:27
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 5986)
+Completed 200 OK in 70ms (Views: 62.0ms | ActiveRecord: 0.4ms | Allocations: 6267)
+
+
+Started GET "/posts/new" for 172.18.0.1 at 2024-07-29 10:32:12 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1647)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 6563)
+Completed 200 OK in 80ms (Views: 44.7ms | ActiveRecord: 3.8ms | Allocations: 13210)
+
+
+Started POST "/posts" for 172.18.0.1 at 2024-07-29 10:32:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Hi psql", "content"=>"psql"}, "commit"=>"Utwórz post"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:188:in `create'
+  [1m[36mPost Create (15.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Hi psql"], ["content", "psql"], ["created_at", "2024-07-29 10:32:22.562678"], ["updated_at", "2024-07-29 10:32:22.562678"], ["user_id", 1]]
+  ↳ app/controllers/posts_controller.rb:188:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:188:in `create'
+Redirected to http://localhost:8080/posts/1
+Completed 302 Found in 56ms (ActiveRecord: 19.4ms | Allocations: 5704)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:32:22 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mRole Load (1.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mComment Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  Rendered comments/_form.html.erb (Duration: 44.8ms | Allocations: 4556)
+  Rendered posts/show.html.erb within layouts/application (Duration: 97.6ms | Allocations: 14725)
+  Rendered layout layouts/application.html.erb (Duration: 113.2ms | Allocations: 19473)
+Completed 200 OK in 152ms (Views: 109.1ms | ActiveRecord: 11.7ms | Allocations: 23686)
+
+
+Started POST "/posts/1/comments" for 172.18.0.1 at 2024-07-29 10:32:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Komentarz 1"}, "commit"=>"Dodaj Komentarz", "post_id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (15.5ms)[0m  [1m[32mINSERT INTO "comments" ("content", "post_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Komentarz 1"], ["post_id", 1], ["created_at", "2024-07-29 10:32:31.301413"], ["updated_at", "2024-07-29 10:32:31.301413"], ["user_id", 1]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Redirected to http://localhost:8080/posts/1
+Completed 302 Found in 58ms (ActiveRecord: 21.3ms | Allocations: 4783)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:32:31 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mRole Load (2.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mComment Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:86
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  ↳ app/models/user.rb:22:in `admin?'
+  Rendered comments/_form.html.erb (Duration: 1.5ms | Allocations: 437)
+  Rendered posts/show.html.erb within layouts/application (Duration: 77.5ms | Allocations: 12586)
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 17328)
+Completed 200 OK in 127ms (Views: 100.3ms | ActiveRecord: 6.0ms | Allocations: 18460)
+
+
+Started GET "/users/sign_out" for 172.18.0.1 at 2024-07-29 10:32:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 303 See Other in 34ms (ActiveRecord: 0.4ms | Allocations: 2779)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:32:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 5466)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 5791)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:32:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 882)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 5652)
+Completed 200 OK in 54ms (Views: 36.4ms | ActiveRecord: 0.5ms | Allocations: 7828)
+
+
+Started GET "/pages/find" for 172.18.0.1 at 2024-07-29 10:32:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#find as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/find.html.erb within layouts/application
+  [1m[36mPost Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:66
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:67
+  Rendered pages/find.html.erb within layouts/application (Duration: 18.4ms | Allocations: 2769)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 7536)
+Completed 200 OK in 46ms (Views: 35.6ms | ActiveRecord: 2.9ms | Allocations: 7942)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:32:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mComment Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:86
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  Rendered comments/_form.html.erb (Duration: 2.2ms | Allocations: 437)
+  Rendered posts/show.html.erb within layouts/application (Duration: 42.7ms | Allocations: 7879)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 12518)
+Completed 200 OK in 74ms (Views: 58.0ms | ActiveRecord: 3.8ms | Allocations: 13606)
+
+
+Started POST "/posts/1/comments" for 172.18.0.1 at 2024-07-29 10:32:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Hej"}, "commit"=>"Dodaj Komentarz", "post_id"=>"1"}
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (18.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "post_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Hej"], ["post_id", 1], ["created_at", "2024-07-29 10:32:42.873684"], ["updated_at", "2024-07-29 10:32:42.873684"], ["user_id", nil]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Redirected to http://localhost:8080/posts/1
+Completed 302 Found in 82ms (ActiveRecord: 32.6ms | Allocations: 3289)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:32:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (10.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mComment Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:86
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  Rendered comments/_form.html.erb (Duration: 2.3ms | Allocations: 437)
+  Rendered posts/show.html.erb within layouts/application (Duration: 52.4ms | Allocations: 8298)
+  Rendered layout layouts/application.html.erb (Duration: 77.8ms | Allocations: 12937)
+Completed 200 OK in 109ms (Views: 79.5ms | ActiveRecord: 13.7ms | Allocations: 14017)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:33:03 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 995)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 5761)
+Completed 200 OK in 49ms (Views: 33.1ms | ActiveRecord: 1.0ms | Allocations: 7764)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:33:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 819)
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 5589)
+Completed 200 OK in 58ms (Views: 36.2ms | ActiveRecord: 0.6ms | Allocations: 7571)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:33:04 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 988)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 5754)
+Completed 200 OK in 38ms (Views: 25.1ms | ActiveRecord: 0.3ms | Allocations: 7790)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:33:05 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (1.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 819)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 5589)
+Completed 200 OK in 77ms (Views: 47.8ms | ActiveRecord: 1.4ms | Allocations: 7553)
+
+
+Started POST "/users" for 172.18.0.1 at 2024-07-29 10:33:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Zarejestruj się"}
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRole Exists? (7.4ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" WHERE "roles"."name" = $1 AND "roles"."id" != $2 LIMIT $3[0m  [["name", "normal"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "admin@email.com"], ["encrypted_password", "$2a$12$cLiFrj6MugUKWc3SJ8qHXeLRngAZPG6PdyTFCbMqCXHUEzdVjgbM."], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["role", 0], ["created_at", "2024-07-29 10:33:16.519271"], ["updated_at", "2024-07-29 10:33:16.519271"]]
+  [1m[36mUser::HABTM_Roles Create (0.6ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 2], ["role_id", 1]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/
+Completed 303 See Other in 470ms (ActiveRecord: 13.2ms | Allocations: 10432)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:33:16 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (2.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (1.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:61
+  Rendered pages/home.html.erb within layouts/application (Duration: 25.4ms | Allocations: 3050)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 7916)
+Completed 200 OK in 63ms (Views: 52.6ms | ActiveRecord: 4.0ms | Allocations: 8189)
+
+
+Started GET "/users/sign_out" for 172.18.0.1 at 2024-07-29 10:33:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:8080/
+Completed 303 See Other in 12ms (ActiveRecord: 0.5ms | Allocations: 1863)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:33:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 443)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 5217)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 5492)
+
+
+Started GET "/users/sign_up" for 172.18.0.1 at 2024-07-29 10:33:20 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 73)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 817)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 5679)
+Completed 200 OK in 60ms (Views: 44.1ms | ActiveRecord: 0.3ms | Allocations: 7673)
+
+
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mRole Load (3.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "admin"], ["LIMIT", 1]]
+  [1m[36mRole Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  [1m[36mRole Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND "roles"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser::HABTM_Roles Create (0.9ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 2], ["role_id", 3]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRole Load (4.3ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:35:39 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 24.7ms | Allocations: 1345)
+  Rendered layout layouts/application.html.erb (Duration: 748.6ms | Allocations: 78681)
+Completed 200 OK in 1233ms (Views: 771.2ms | ActiveRecord: 0.0ms | Allocations: 114887)
+
+
+Started GET "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:35:42 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mRole Load (2.7ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 9.1ms | Allocations: 616)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 94.6ms | Allocations: 4060)
+  Rendered layout layouts/application.html.erb (Duration: 136.3ms | Allocations: 9019)
+Completed 200 OK in 715ms (Views: 146.8ms | ActiveRecord: 81.5ms | Allocations: 47799)
+
+
+Started POST "/users/sign_in" for 172.18.0.1 at 2024-07-29 10:35:50 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Zaloguj się"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (12.7ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2024-07-29 10:35:51.054880"], ["updated_at", "2024-07-29 10:35:51.056074"], ["id", 2]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:8080/
+Completed 303 See Other in 476ms (ActiveRecord: 20.6ms | Allocations: 10507)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:35:51 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (2.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (1.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:61
+  [1m[36mUser Count (5.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/home.html.erb:62
+  Rendered pages/home.html.erb within layouts/application (Duration: 44.2ms | Allocations: 5815)
+  Rendered layout layouts/application.html.erb (Duration: 68.5ms | Allocations: 10711)
+Completed 200 OK in 76ms (Views: 61.4ms | ActiveRecord: 10.0ms | Allocations: 11042)
+
+
+Started GET "/admin/users" for 172.18.0.1 at 2024-07-29 10:36:02 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRole Load (2.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/controllers/admin/application_controller.rb:13:in `authenticate_admin'
+  Rendering layout /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/layouts/administrate/application.html.erb
+  Rendering /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/index.html.erb within layouts/administrate/application
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_search.html.erb (Duration: 2.6ms | Allocations: 1387)
+  [1m[36mRole Load (0.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "normal"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `set_default_role'
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_index_header.html.erb (Duration: 25.3ms | Allocations: 4808)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_collection_header_actions.html.erb (Duration: 0.8ms | Allocations: 147)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mRole Pluck (0.6ms)[0m  [1m[34mSELECT "roles"."name" FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/fields/has_many_roles_field/_index.html.erb:1
+  Rendered fields/has_many_roles_field/_index.html.erb (Duration: 9.4ms | Allocations: 1112)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/fields/number/_index.html.erb (Duration: 0.7ms | Allocations: 148)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/fields/string/_index.html.erb (Duration: 1.1ms | Allocations: 135)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_collection_item_actions.html.erb (Duration: 2.2ms | Allocations: 467)
+  [1m[36mRole Pluck (0.8ms)[0m  [1m[34mSELECT "roles"."name" FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/fields/has_many_roles_field/_index.html.erb:1
+  Rendered fields/has_many_roles_field/_index.html.erb (Duration: 8.7ms | Allocations: 968)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/fields/number/_index.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/fields/string/_index.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_collection_item_actions.html.erb (Duration: 5.6ms | Allocations: 253)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_collection.html.erb (Duration: 95.7ms | Allocations: 9028)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_pagination.html.erb (Duration: 13.3ms | Allocations: 676)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/index.html.erb within layouts/administrate/application (Duration: 174.9ms | Allocations: 16359)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_stylesheet.html.erb (Duration: 12.2ms | Allocations: 2106)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_icons.html.erb (Duration: 0.6ms | Allocations: 99)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_navigation.html.erb (Duration: 16.2ms | Allocations: 1556)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_flashes.html.erb (Duration: 0.9ms | Allocations: 298)
+  Rendered /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/administrate/application/_javascript.html.erb (Duration: 10.2ms | Allocations: 2216)
+  Rendered layout /home/hosting/.rvm/gems/ruby-3.1.2/gems/administrate-0.20.1/app/views/layouts/administrate/application.html.erb (Duration: 248.7ms | Allocations: 25678)
+Completed 200 OK in 555ms (Views: 258.8ms | ActiveRecord: 6.2ms | Allocations: 35520)
+
+
+Started GET "/" for 172.18.0.1 at 2024-07-29 10:36:11 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/home.html.erb:27
+  [1m[36mRole Load (4.1ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:60:in `map'
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/views/pages/home.html.erb:61
+  [1m[36mUser Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/pages/home.html.erb:62
+  Rendered pages/home.html.erb within layouts/application (Duration: 31.3ms | Allocations: 3949)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 8746)
+Completed 200 OK in 52ms (Views: 40.2ms | ActiveRecord: 8.0ms | Allocations: 9055)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-29 10:36:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/privacy.html.erb:27
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 6328)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.7ms | Allocations: 6663)
+
+
+Started GET "/pages/find" for 172.18.0.1 at 2024-07-29 10:36:14 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#find as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/find.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/find.html.erb:27
+  [1m[36mPost Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:66
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (title LIKE '%%') LIMIT $1 OFFSET $2[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/pages/find.html.erb:67
+  [1m[36mRole Load (1.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  Rendered pages/find.html.erb within layouts/application (Duration: 90.0ms | Allocations: 10786)
+  Rendered layout layouts/application.html.erb (Duration: 107.0ms | Allocations: 15661)
+Completed 200 OK in 142ms (Views: 92.2ms | ActiveRecord: 16.7ms | Allocations: 20246)
+
+
+Started GET "/pages/privacy" for 172.18.0.1 at 2024-07-29 10:36:17 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#privacy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/privacy.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pages/privacy.html.erb:27
+  Rendered pages/privacy.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 5989)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 2.1ms | Allocations: 6270)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:36:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mRole Load (1.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mComment Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:86
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  Rendered comments/_form.html.erb (Duration: 5.0ms | Allocations: 750)
+  Rendered posts/show.html.erb within layouts/application (Duration: 119.4ms | Allocations: 21133)
+  Rendered layout layouts/application.html.erb (Duration: 137.2ms | Allocations: 25882)
+Completed 200 OK in 176ms (Views: 131.5ms | ActiveRecord: 15.4ms | Allocations: 30503)
+
+
+Started POST "/posts/1/comments" for 172.18.0.1 at 2024-07-29 10:36:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"content"=>"Działa"}, "commit"=>"Dodaj Komentarz", "post_id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mComment Create (10.4ms)[0m  [1m[32mINSERT INTO "comments" ("content", "post_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Działa"], ["post_id", 1], ["created_at", "2024-07-29 10:36:23.713869"], ["updated_at", "2024-07-29 10:36:23.713869"], ["user_id", 2]]
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:27:in `create'
+Redirected to http://localhost:8080/posts/1
+Completed 302 Found in 54ms (ActiveRecord: 14.8ms | Allocations: 4933)
+
+
+Started GET "/posts/1" for 172.18.0.1 at 2024-07-29 10:36:23 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:221:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:57
+  [1m[36mRole Load (1.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mComment Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:84
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2 OFFSET $3[0m  [["post_id", 1], ["LIMIT", 10], ["OFFSET", 0]]
+  ↳ app/views/posts/show.html.erb:86
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:88
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:22:in `admin?'
+  Rendered comments/_form.html.erb (Duration: 1.6ms | Allocations: 437)
+  Rendered posts/show.html.erb within layouts/application (Duration: 132.2ms | Allocations: 14376)
+  Rendered layout layouts/application.html.erb (Duration: 150.4ms | Allocations: 19029)
+Completed 200 OK in 174ms (Views: 153.1ms | ActiveRecord: 6.7ms | Allocations: 20206)
+
+

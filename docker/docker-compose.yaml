@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: blog_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: blogpassword
+    volumes:
+      - ../db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  ruby_container:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"      # Port for Rails app
+      - "1080:1080"    # Port for MailCatcher interface
+      - "1025:1025"    # Port for MailCatcher SMTP server
+    volumes:
+      - ../application:/home/hosting/workspace
+    environment:
+      DATABASE_URL: postgres://postgres:blogpassword@db:5432/blog_development
+      RAILS_ENV: development
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+volumes:
+  pgdata:
