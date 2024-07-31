@@ -3,7 +3,9 @@ class PagesController < ApplicationController
   end
 
   def find
-    @posts = Post.where("title LIKE ?", "%#{params[:title]}%").page(params[:page]).per(10)
+    # @posts = Post.where("title LIKE ?", "%#{params[:title]}%").page(params[:page]).per(10)
+    query = params[:title].present? ? { match: { title: params[:title] } } : { match_all: {} }
+    @posts = Post.search(query).page(params[:page]).per(10).records
   end
 
 

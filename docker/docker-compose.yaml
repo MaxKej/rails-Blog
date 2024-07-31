@@ -9,6 +9,19 @@ services:
       - ../db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+      
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=elasticpassword
+      - xpack.security.enabled=true
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ../es_data:/usr/share/elasticsearch/data
 
   ruby_container:
     build: 
@@ -23,9 +36,12 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:blogpassword@db:5432/blog_development
       RAILS_ENV: development
+      ELASTICSEARCH_URL: http://elastic:elasticpassword@elasticsearch:9200
     depends_on:
       - db
+      - elasticsearch
     stdin_open: true
     tty: true
+
 volumes:
   pgdata:

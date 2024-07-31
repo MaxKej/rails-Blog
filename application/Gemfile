@@ -95,3 +95,6 @@ gem 'httparty'
 gem 'rack-cors'
 
 gem 'actionmailer'
+
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
