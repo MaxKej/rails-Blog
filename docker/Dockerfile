@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
-RUN apt-get -y update 
-RUN apt-get -y upgrade 
+RUN apt-get -y update
+RUN apt-get -y upgrade
 RUN apt-get -y install build-essential curl sudo gnupg2 libssl-dev libreadline-dev zlib1g-dev libpq-dev
 
 
@@ -23,4 +23,3 @@ RUN sudo apt-get install -y nodejs npm
 WORKDIR /home/hosting
 
 CMD ["bash"]
-

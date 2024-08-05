@@ -98,3 +98,5 @@ gem 'actionmailer'
 
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
+
+gem 'yard'

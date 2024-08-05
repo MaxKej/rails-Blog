@@ -15,7 +15,7 @@
           <%= link_to "Dodaj nowy post", new_post_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Znajdź Post", find_pages_path, class: "nav-link" %>
+          <%= link_to "Znajdź Post", find_pages_path, class: "nav-link active" %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -47,7 +47,6 @@
   </div>
 </nav>
 
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6">
@@ -78,11 +77,12 @@
           </div>
         <% end %>
 
-        <%= paginate @posts%>
+        <%= paginate @posts %>
       <% else %>
         <p class="rounded border p-4 bg-light">Nie znaleziono żadnego postu.</p>
       <% end %>
     </div>
   </div>
 </div>
+
 
