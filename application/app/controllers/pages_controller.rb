@@ -13,29 +13,33 @@ class PagesController < ApplicationController
   # @example Przykład zapytania wyszukiwania
   #   GET /find?title=example
   def find
-    # @posts = Post.where("title LIKE ?", "%#{params[:title]}%").page(params[:page]).per(10)
     if params[:title].present?
       query = {
         query: {
           match: {
-            title: params[:title]
+            title: {
+              query: params[:title].downcase,
+              operator: "and"
+            }
           }
         }
       }
     else
       query = {
         query: {
-          match_all: {}
+          match_none: {} # Explicitly state that no posts should be returned
         }
       }
     end
 
     begin
       @posts = Post.search(query).page(params[:page]).per(10).records
-    rescue Elasticsearch::Transport::Transport::Errors::BadRequest => e
+    rescue StandardError => e
+      Rails.logger.error("Elasticsearch query error: #{e.message}")
       @posts = Post.none
     end
   end
+
 
   # Wyświetla stronę polityki prywatności.
   #

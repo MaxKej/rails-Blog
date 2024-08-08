@@ -54,7 +54,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       redirect_to @comment.post, notice: 'Komentarz został pomyślnie zaktualizowany.'
     else
-      render :edit
+      render @comment.post
     end
   end
 

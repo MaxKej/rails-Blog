@@ -194,9 +194,11 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: 'Post został pomyślnie zaktualizowany.'
     else
-      render :edit
+      flash.now[:alert] = 'Nie udało się zaktualizować posta.'
+      redirect_to @post
     end
   end
+
 
   # Usuwa istniejący post.
   #

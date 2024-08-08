@@ -1,7 +1,7 @@
 <head>
   <title>Post</title>
-  <%= javascript_include_tag 'controllers/edit_post' %>
-  <%= javascript_include_tag 'controllers/edit_comment' %>
+  <%#= javascript_include_tag 'controllers/edit_post' %>
+  <%#= javascript_include_tag 'controllers/edit_comment' %>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -127,3 +127,39 @@
 
 
 <%= render 'comments/form' %>
+
+
+<script>
+    document.addEventListener('turbo:load', function() {
+        console.log("script loaded");
+        document.querySelectorAll('.edit-post-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const postId = this.dataset.postId;
+                document.getElementById(`post-edit-form-${postId}`).style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.cancel-edit-post-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const postId = this.dataset.postId;
+                document.getElementById(`post-edit-form-${postId}`).style.display = 'none';
+            });
+        });
+
+        // Pokaż formularz edycji komentarza
+        document.querySelectorAll(".edit-comment-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                const commentId = this.dataset.commentId;
+                document.getElementById(`comment-edit-form-${commentId}`).style.display = 'block';
+            });
+        });
+
+        // Ukryj formularz edycji komentarza, gdy kliknięty przycisk "Porzuć"
+        document.querySelectorAll(".cancel-edit-comment-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                const commentId = this.dataset.commentId;
+                document.getElementById(`comment-edit-form-${commentId}`).style.display = 'none';
+            });
+        });
+    });
+</script>

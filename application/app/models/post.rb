@@ -32,11 +32,25 @@ class Post < ApplicationRecord
 
   settings index: {
     number_of_shards: 1,
-    number_of_replicas: 0
+    number_of_replicas: 0,
+    analysis: {
+      filter: {
+        lowercase_filter: {
+          type: "lowercase"
+        }
+      },
+      analyzer: {
+        lowercase_analyzer: {
+          type: "custom",
+          tokenizer: "standard",
+          filter: ["lowercase_filter"]
+        }
+      }
+    }
   } do
     mappings dynamic: 'false' do
-      indexes :title, type: :text, analyzer: 'english'
-      indexes :content, type: :text, analyzer: 'english'
+      indexes :title, type: :text, analyzer: 'lowercase_analyzer'
+      indexes :content, type: :text, analyzer: 'lowercase_analyzer'
     end
   end
 
@@ -45,6 +59,12 @@ class Post < ApplicationRecord
   # @param options [Hash] opcje indeksowania
   # @return [Hash] zindeksowane dane w formacie JSON
   def as_indexed_json(options = {})
-    as_json(only: [:title, :content, :user_id])
+    json = as_json(only: [:title, :content, :user_id])
+    json.merge!(
+      'title' => json['title'].downcase,
+      'content' => json['content'].downcase
+    )
+    json
   end
+
 end
