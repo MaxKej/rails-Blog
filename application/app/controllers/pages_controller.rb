@@ -16,10 +16,9 @@ class PagesController < ApplicationController
     if params[:title].present?
       query = {
         query: {
-          match: {
+          wildcard: {
             title: {
-              query: params[:title].downcase,
-              operator: "and"
+              value: "*#{params[:title].downcase}*"
             }
           }
         }
