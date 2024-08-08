@@ -10,6 +10,17 @@ i wykonać poniższe komendy:
 
 bundle install
 
+rake db:create (potwierdza istnienie bazy danych)
+
+rake db:migrate
+
+(w konsoli Rails) komendy do utworzenia indeksu elastic search
+
+Post.__elasticsearch__.create_index!(force: true)
+
+Post.import
+
+
 rails s -b 0.0.0.0 -p <numer_portu_kontnera>
 
 
